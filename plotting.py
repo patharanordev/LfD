@@ -32,7 +32,7 @@ def plot_ellipse(C, colour, obj_id):
                     angle=angle_deg, edgecolor=colour, linestyle='-',
                     linewidth=2, fill=False)
         plot_axes.add_artist(e)
-        plt.text(centre[0], centre[1], obj_id, {'color': 'rgb', 'fontsize': 10})
+        plt.text(centre[0], centre[1], obj_id, {'color': 'r', 'fontsize': 10})
 
 
 def plot_est_and_gt_ellipses_on_images(K, Ms_t, estCs, gtQs, visibility, images, dataset, save_output_images):
