@@ -16,6 +16,8 @@ import numpy as np
 
 from lfd import dual_ellipse_to_parameters, project_ellipsoids, dual_quadric_to_ellipsoid_parameters
 
+import matplotlib.cm
+cmap = list(matplotlib.cm.cmap_d.keys())
 
 def plot_ellipse(C, colour):
     """Plots one ellipse on one existing figure.
@@ -68,7 +70,8 @@ def plot_est_and_gt_ellipses_on_images(K, Ms_t, estCs, gtQs, visibility, images,
                 if not ((np.isnan(estC)).any()):
                     if gtQs.shape[0] != 0:
                         plot_ellipse(gtC, red)
-                    plot_ellipse(estC, blue)
+                    # plot_ellipse(estC, blue)
+                    plot_ellipse(estC, cmap[obj_id])
         plt.text(300, 50, 'Projection of GT   ellipsoids', {'color': 'r', 'fontsize': 12})
         plt.text(300, 70, 'Projection of Est. ellipsoids', {'color': 'b', 'fontsize': 12})
         if save_output_images:
